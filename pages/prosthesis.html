@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Supportfriend: HOME</title>
+</head>
+
+<body>
+    <nav class="navigation container">
+        <a href="./prosthesis.html">
+            <img src="../assets/prosthesis/logo.jpg" alt="Supportfriend  logo" class="navigation__logo" />
+        </a>
+        <div class="navigation-to-right">
+            <!-- Search bar -->
+            <form action="./prosthesis.html" class="navigation__search">
+                <input type="text" name="search-criteria" id="search-criteria" placeholder="what product are you looking for...?" />
+
+                <img class="navigation__search-icon" src="../assets/icons/search.svg" alt="Search icon" />
+            </form>
+
+            <!-- Menu options -->
+            <ul class="navigation__options">
+                <!-- <li class="navigation__item">
+                    <a href="#">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/heart-border-green.svg" alt="Favorites icon" />
+                            <p>Mis favoritos</p>
+                        </div>
+                    </a>
+                </li> -->
+                <li class="navigation__item dropdown__parent" id="my-account">
+                    <a href="#">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/person-border-green.svg" alt="Account icon" />
+                            <p>My account</p>
+                        </div>
+                    </a>
+                    <!-- Nested dropdown menu -->
+                    <ul class="account__options dropdown__child" id="my-account-dropbox">
+                        <!-- <li class="account__option">
+                            <a href="#">
+                                <img src="../assets/icons/person-fill-black.svg" alt="Account icon" />Mi cuenta
+                            </a>
+                        </li>
+                        <li class="account__option">
+                            <a href="#"><img src="../assets/icons/heart-border-black.svg" alt="Favorites icon" /> Mis favoritos
+                            </a>
+                        </li>
+                        <li class="account__option">
+                            <a href="./cart.html">
+                                <img src="../assets/icons/check-black.svg" alt="Cart icon" />My cart
+                            </a>
+                        </li> -->
+                        <li class="account__option">
+                            <a href="./login.html">
+                                <img src="../assets/icons/lock-black.svg" alt="Log-in icon" />Login</a>
+                        </li>
+                        <li class="account__option">
+                            <a href="./signup.html"><img src="../assets/icons/person-plus-black.svg" alt="Sign-up icon" />Signup</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navigation__item" id="my-cart">
+                    <a href="#">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/basket-border-green.svg" alt="Cart icon" />
+                            <p>My cart</p>
+                        </div>
+                        <span id="cart-span">3</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="block.html">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/info-lg.svg" alt="Block icon" />
+                            <p>Block</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="donations.html">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/cash.svg" alt="Cash icon" />
+                            <p>Donations</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products grid -->
+    <div class="container" id="search-layout">
+        <aside class="price-filter">
+            <form class="aside-form" id="aside-filter">
+                <div class="form-group">
+                    <label class="form__label" for="price-range">Price</label>
+                    <input class="form__range" type="range" name="price-range" id="price-range" step="1" />
+                </div>
+                <div class="form-group form-group--fifty-container">
+                    <div class="form-group--fifty">
+                        <label class="form__label" for="from">From: </label>
+                        <input type="number" class="form__input" placeholder="0" id="from-input" step="1" />
+                    </div>
+                    <div class="form-group--fifty">
+                        <label class="form__label" for="from">To: </label>
+                        <input type="number" class="form__input" placeholder="100" id="to-input" step="1" />
+                    </div>
+                </div>
+                <button class="btn btn--green btn--block" type="submit">Filter</button>
+            </form>
+        </aside>
+
+        <section class="container products" id="productsSection"></section>
+    </div>
+
+    <!-- Product description modal -->
+    <article class="container product-modal"></article>
+
+    <!-- User cart modal -->
+    <article class="container cart-modal">
+        <div class="cart-modal__header">
+            <h2 class="cart-modal__title"></h2>
+            <img src="../assets/icons/x-square-fill-green.svg" alt="Close dialog icon" id="cart-modal__close" />
+        </div>
+        <ul class="cart-modal__items" id="cart-list"></ul>
+
+        <div class="cart-modal__pricing-row">
+            <p>Subtotal</p>
+            <p id="cart-modal__subtotal-value">38,40</p>
+        </div>
+
+        <div class="cart-modal__pricing-row">
+            <p id="cart-modal__total-title">Total (VAT included)</p>
+            <p id="cart-modal__total-value">38,40</p>
+        </div>
+
+        <div class="cart-modal__free-ship" id="cart-modal__free-ship">
+            Te faltan 6,60 para disfrutar del envío gratuito
+        </div>
+
+        <a href="./cart_prosthesis.html" class="btn btn--block btn--green">Go to cart</a>
+        <button type="button" class="btn btn--block btn--green"id="compra">Place an order</button>
+    </article>
+    <!-- Pagination buttons -->
+    <div class="container">
+        <div class="page-controllers"></div>
+    </div>
+
+    <script src="../assets/javascript/pagination_prosthesis.js" type="module"></script>
+    <script src="../assets/javascript/dom_prosthesis.js" type="module"></script>
+    <script src="../assets/javascript/search_prosthesis.js" type="module"></script>
+</body>
+
+</html>

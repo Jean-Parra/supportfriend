@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  <title>Blocks Informativos</title>
+  <style>
+    .titulo-block{
+        text-align: center;
+    }
+    .block {
+      display: flex;
+      align-items: center;
+      padding: 40px 80px 10px 60px    }
+
+    .block-image {
+      width: 150px;
+      margin-right: 20px;
+    }
+
+    .block-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .block-description {
+      font-size: 16px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navigation container">
+        <a href="./prosthesis.html">
+            <img src="../assets/prosthesis/logo.jpg" alt="Supportfriend  logo" class="navigation__logo" />
+        </a>
+        <div class="navigation-to-right">
+            <!-- Search bar -->
+            <form action="./prosthesis.html" class="navigation__search">
+                <input type="text" name="search-criteria" id="search-criteria" placeholder="what product are you looking for...?" />
+
+                <img class="navigation__search-icon" src="../assets/icons/search.svg" alt="Search icon" />
+            </form>
+
+            <!-- Menu options -->
+            <ul class="navigation__options">
+                <!-- <li class="navigation__item">
+                    <a href="#">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/heart-border-green.svg" alt="Favorites icon" />
+                            <p>Mis favoritos</p>
+                        </div>
+                    </a>
+                </li> -->
+                <li class="navigation__item dropdown__parent" id="my-account">
+                    <a href="#">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/person-border-green.svg" alt="Account icon" />
+                            <p>My account</p>
+                        </div>
+                    </a>
+                    <!-- Nested dropdown menu -->
+                    <ul class="account__options dropdown__child" id="my-account-dropbox">
+                        <!-- <li class="account__option">
+                            <a href="#">
+                                <img src="../assets/icons/person-fill-black.svg" alt="Account icon" />Mi cuenta
+                            </a>
+                        </li>
+                        <li class="account__option">
+                            <a href="#"><img src="../assets/icons/heart-border-black.svg" alt="Favorites icon" /> Mis favoritos
+                            </a>
+                        </li>
+                        <li class="account__option">
+                            <a href="./cart.html">
+                                <img src="../assets/icons/check-black.svg" alt="Cart icon" />My cart
+                            </a>
+                        </li> -->
+                        <li class="account__option">
+                            <a href="./login.html">
+                                <img src="../assets/icons/lock-black.svg" alt="Log-in icon" />Login</a>
+                        </li>
+                        <li class="account__option">
+                            <a href="./signup.html"><img src="../assets/icons/person-plus-black.svg" alt="Sign-up icon" />Signup</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navigation__item" id="my-cart">
+                    <a href="#">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/basket-border-green.svg" alt="Cart icon" />
+                            <p>My cart</p>
+                        </div>
+                        <span id="cart-span">3</span>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="block.html">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/info-lg.svg" alt="Block icon" />
+                            <p>Block</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="navigation__item">
+                    <a href="donations.html">
+                        <div class="navigation__option">
+                            <img src="../assets/icons/cash.svg" alt="Cash icon" />
+                            <p>Donations</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="titulo-block">INFORMATION BLOCK</h1>
+
+  <div class="block">
+    <img class="block-image" src="../assets/prosthesis/17.jpg" alt="Imagen 1">
+    <div>
+      <h2 class="block-title">First 3D Printed Prosthesis Implant</h2>
+      <p class="block-description">In a revolutionary breakthrough, the first successful implant of a 3D printed prosthesis was achieved. This technological milestone marks the beginning of a new era in the manufacture of customized prostheses, offering greater precision and comfort for users.</p>
+    </div>
+  </div>
+  <div class="block">
+    <img class="block-image" src="../assets/prosthesis/18.jpg" alt="Imagen 2">
+    <div>
+      <h2 class="block-title">Development of Mind-Controlled Prosthetics</h2>
+      <p class="block-description">Thanks to advances in neuroscience and technology, prostheses controlled directly by the mind have been developed. Using brain-computer interfaces, people can control their prosthesis with the power of their thoughts, opening up new possibilities for mobility and independence.</p>
+    </div>
+  </div>
+  <div class="block">
+    <img class="block-image" src="../assets/prosthesis/19.jpg" alt="Imagen 3">
+    <div>
+      <h2 class="block-title">Paralympic Games and Advances in Sports Prosthetics</h2>
+      <p class="block-description">The Paralympic Games have been an important stage for showcasing advances in sports prosthetics. Athletes with disabilities use specially designed prostheses that allow them to compete at the highest level in various disciplines, demonstrating human potential and self-improvement.</p>
+    </div>
+  </div>
+  <article class="container cart-modal">
+    <div class="cart-modal__header">
+        <h2 class="cart-modal__title"></h2>
+        <img src="../assets/icons/x-square-fill-green.svg" alt="Close dialog icon" id="cart-modal__close" />
+    </div>
+    <ul class="cart-modal__items" id="cart-list"></ul>
+
+    <div class="cart-modal__pricing-row">
+        <p>Subtotal</p>
+        <p id="cart-modal__subtotal-value">38,40</p>
+    </div>
+
+    <div class="cart-modal__pricing-row">
+        <p id="cart-modal__total-title">Total (VAT included)</p>
+        <p id="cart-modal__total-value">38,40</p>
+    </div>
+
+    <div class="cart-modal__free-ship" id="cart-modal__free-ship">
+        Te faltan 6,60 para disfrutar del envío gratuito
+    </div>
+
+    <a href="./cart_prosthesis.html" class="btn btn--block btn--green">Go to cart</a>
+    <button type="button" class="btn btn--block btn--green"id="compra">Place an order</button>
+</article>
+  <script src="../assets/javascript/pagination_prosthesis.js" type="module"></script>
+    <script src="../assets/javascript/dom_prosthesis.js" type="module"></script>
+    <script src="../assets/javascript/search_prosthesis.js" type="module"></script>
+</body>
+</html>

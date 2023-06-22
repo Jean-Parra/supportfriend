@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Place an order</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .pedido-realizado {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .pedido-realizado h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .pedido-realizado p {
+      font-size: 24px;
+    }
+
+    .show-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: zoomIn 0.5s forwards;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mi Tienda</h1>
+    <button id="pedidoBtn"id="compra">Place an order</button>
+  </div>
+  <div class="overlay">
+    <div class="pedido-realizado">
+      <h2>Pedido Realizado</h2>
+      <p>¡Gracias por tu compra!</p>
+    </div>
+  </div>
+
+  <script>
+    const pedidoBtn = document.getElementById('pedidoBtn');
+    const overlay = document.querySelector('.overlay');
+
+    pedidoBtn.addEventListener('click', () => {
+      overlay.classList.add('show-overlay');
+      setTimeout(() => {
+        overlay.classList.remove('show-overlay');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

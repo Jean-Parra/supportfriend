@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../pages/images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+<body>
+  <nav class="navigation container">
+    <a href="./prosthesis.html">
+        <img src="../assets/prosthesis/logo.jpg" alt="Supportfriend  logo" class="navigation__logo" />
+    </a>
+    <div class="navigation-to-right">
+        <!-- Search bar -->
+        <form action="./prosthesis.html" class="navigation__search">
+            <input type="text" name="search-criteria" id="search-criteria" placeholder="what product are you looking for...?" />
+
+            <img class="navigation__search-icon" src="../assets/icons/search.svg" alt="Search icon" />
+        </form>
+
+        <!-- Menu options -->
+        <ul class="navigation__options">
+            <!-- <li class="navigation__item">
+                <a href="#">
+                    <div class="navigation__option">
+                        <img src="../assets/icons/heart-border-green.svg" alt="Favorites icon" />
+                        <p>Mis favoritos</p>
+                    </div>
+                </a>
+            </li> -->
+            <li class="navigation__item dropdown__parent" id="my-account">
+                <a href="#">
+                    <div class="navigation__option">
+                        <img src="../assets/icons/person-border-green.svg" alt="Account icon" />
+                        <p>My account</p>
+                    </div>
+                </a>
+                <!-- Nested dropdown menu -->
+                <ul class="account__options dropdown__child" id="my-account-dropbox">
+                    <!-- <li class="account__option">
+                        <a href="#">
+                            <img src="../assets/icons/person-fill-black.svg" alt="Account icon" />Mi cuenta
+                        </a>
+                    </li>
+                    <li class="account__option">
+                        <a href="#"><img src="../assets/icons/heart-border-black.svg" alt="Favorites icon" /> Mis favoritos
+                        </a>
+                    </li>
+                    <li class="account__option">
+                        <a href="./cart.html">
+                            <img src="../assets/icons/check-black.svg" alt="Cart icon" />My cart
+                        </a>
+                    </li> -->
+                    <li class="account__option">
+                        <a href="./login.html">
+                            <img src="../assets/icons/lock-black.svg" alt="Log-in icon" />Login</a>
+                    </li>
+                    <li class="account__option">
+                        <a href="./signup.html"><img src="../assets/icons/person-plus-black.svg" alt="Sign-up icon" />Signup</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="navigation__item" id="my-cart">
+                <a href="#">
+                    <div class="navigation__option">
+                        <img src="../assets/icons/basket-border-green.svg" alt="Cart icon" />
+                        <p>My cart</p>
+                    </div>
+                    <span id="cart-span">3</span>
+                </a>
+            </li>
+            <li class="navigation__item">
+              <a href="block.html">
+                  <div class="navigation__option">
+                      <img src="../assets/icons/info-lg.svg" alt="Block icon" />
+                      <p>Block</p>
+                  </div>
+              </a>
+          </li>
+          <li class="navigation__item">
+              <a href="donations.html">
+                  <div class="navigation__option">
+                      <img src="../assets/icons/cash.svg" alt="Cash icon" />
+                      <p>Donations</p>
+                  </div>
+              </a>
+          </li>
+        </ul>
+    </div>
+</nav>
+
+  <main class="main-container">
+    <section class="main-container__background-section">
+      <div class="card">
+        <img class="card__logo" src="../pages/images/card-logo.svg" alt="logo">
+        <p class="card__number">0000 0000 0000 0000</p>
+        <div class="card__details">
+          <p class="card__details-name">Your full name</p>
+          <p><span class="card__month" >00</span>/<span class="card__year">00</span></p>
+        </div>
+      </div>
+
+      <div class="card-back">
+        <p class="card-back__cvc">000</p>
+      </div>
+    </section>
+
+    <section class="main-container__form-section" id="box">
+      <label class="form__label" for="cardholder">Quantity</label>
+        <input class="form__input" type="number" name="cardholder" id="" placeholder="Amount to donate">
+      <form class="form" action="">
+        <label class="form__label" for="cardholder">Name</label>
+        <input class="form__input" type="text" name="cardholder" id="cardholder" placeholder="Your full name">
+        <div class="form__cardholder--error error"></div>
+
+        <label class="form__label" for="cardNumber">Card Number</label>
+        <input class="form__input" type="text" name="cardNumber" id="cardNumber" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
+        <div class="form__inputnumber--error error"></div>
+
+        <div class="form__date-cvc"><!-- grid -->
+          <!-- 1 -->
+          <label class="form__label" for="cardMonth">Exp. Date (MM/YY)</label>
+          <!-- 2 -->
+          <label class="form__label" for="cardCvc">CVC</label>
+          <!-- 3 -->
+          <div class="form__date">
+            <input class="form__input" type="text" maxlength="2" name="cardMonth" id="cardMonth" placeholder="MM">
+            <input class="form__input" type="text" maxlength="2" name="cardYear" id="cardYear" placeholder="YY">
+          </div>
+          <!-- 4 -->
+          <input class="form__input" type="text" maxlength="3" name="cardCvc" id="cardCvc" placeholder="e.g. 123">
+          <!-- 5 -->
+          <div class="form__errors-container">
+            <div class="form__input-mm--error error"></div>
+            <div class="form__input-yy--error error"></div>
+          </div>
+          <!-- 6 -->
+          <div class="form__input-cvc--error error"></div>
+        </div>
+        <input class="form__submit" type="submit" value="Confirm">
+      </form>
+
+      <!-- Completed state start -->
+
+      <section class="thanks-section">
+        <img class="thanks-section__img" src="../pages/images/icon-complete.svg" alt="complete icon">
+        <h1 class="thanks-section__title">Thank you!</h1>
+        <p class="thanks-section__text">Donation successfully completed</p>
+        <button class="thanks-section__button">Continue</button>
+      </section>
+
+    </section>
+  </main>
+  <article class="container cart-modal">
+    <div class="cart-modal__header">
+        <h2 class="cart-modal__title"></h2>
+        <img src="../assets/icons/x-square-fill-green.svg" alt="Close dialog icon" id="cart-modal__close" />
+    </div>
+    <ul class="cart-modal__items" id="cart-list"></ul>
+
+    <div class="cart-modal__pricing-row">
+        <p>Subtotal</p>
+        <p id="cart-modal__subtotal-value">38,40</p>
+    </div>
+
+    <div class="cart-modal__pricing-row">
+        <p id="cart-modal__total-title">Total (VAT included)</p>
+        <p id="cart-modal__total-value">38,40</p>
+    </div>
+
+    <div class="cart-modal__free-ship" id="cart-modal__free-ship">
+        Te faltan 6,60 para disfrutar del envío gratuito
+    </div>
+
+    <a href="./cart_prosthesis.html" class="btn btn--block btn--green">Go to cart</a>
+    <button type="button" class="btn btn--block btn--green"id="compra">Place an order</button>
+</article>
+  <script src="../assets/javascript/pagination_prosthesis.js" type="module"></script>
+    <script src="../assets/javascript/dom_prosthesis.js" type="module"></script>
+    <script src="../assets/javascript/search_prosthesis.js" type="module"></script>
+
+
+  <script src="./main.js"></script>
+</body>
+</html>
